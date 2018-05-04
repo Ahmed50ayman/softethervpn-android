@@ -86,8 +86,8 @@ The download and build instruction is following:
 ```sh
 $ git clone https://github.com/lfasmpao/softethervpn-android
 $ cd softethervpn-android
-$ export CROSS_PLATFORM=(android gcc location)
-$ ./configure --build-host=i686 --host=arm
+$ export CROSS_PLATFORM=(android ndk gcc location) 
+$ ./configure
 $ make
 $ make install
 ```
