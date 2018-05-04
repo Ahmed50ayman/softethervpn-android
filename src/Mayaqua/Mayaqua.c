@@ -727,11 +727,12 @@ void CheckUnixTempDir()
 		UINT64 now = SystemTime64();
 		IO *o;
 
-		MakeDir("/tmp");
+		// Opens android native tmp folder
+		MakeDir("/data/local/tmp");
 
 		Format(tmp2, sizeof(tmp2), "%I64u", now);
 
-		Format(tmp, sizeof(tmp), "/tmp/.%s", tmp2);
+		Format(tmp, sizeof(tmp), "/data/local/tmp/.%s", tmp2);
 
 		o = FileCreate(tmp);
 		if (o == NULL)
@@ -739,7 +740,7 @@ void CheckUnixTempDir()
 			o = FileOpen(tmp, false);
 			if (o == NULL)
 			{
-				Print("Unable to use /tmp.\n\n");
+				Print("Unable to use /data/local/tmp.\n\n");
 				exit(0);
 				return;
 			}

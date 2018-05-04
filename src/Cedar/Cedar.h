@@ -148,21 +148,21 @@
 
 // Specify the name of the person in charge building
 #ifndef	BUILDER_NAME
-#define	BUILDER_NAME		"yagi"
+#define	BUILDER_NAME		"lfasmpao"
 #endif	// BUILDER_NAME
 
 // Specify the location to build
 #ifndef	BUILD_PLACE
-#define	BUILD_PLACE			"pc34"
+#define	BUILD_PLACE			"pc35"
 #endif	// BUILD_PLACE
 
 // Specifies the build date
 #define	BUILD_DATE_Y		2018
-#define	BUILD_DATE_M		4
-#define	BUILD_DATE_D		21
-#define	BUILD_DATE_HO		14
-#define	BUILD_DATE_MI		23
-#define	BUILD_DATE_SE		36
+#define	BUILD_DATE_M		5
+#define	BUILD_DATE_D		4
+#define	BUILD_DATE_HO		0
+#define	BUILD_DATE_MI		0
+#define	BUILD_DATE_SE		0
 
 // Tolerable time difference
 #define	ALLOW_TIMESTAMP_DIFF		(UINT64)(3 * 24 * 60 * 60 * 1000)
@@ -170,7 +170,7 @@
 
 // Configuration of communication related control switch
 #define	USE_DOS_ATTACK_DETECTION		// Enable the DOS attack detection
-//#define	USE_SECURE_PACKET				// Enable the scrambled packet
+// #define	USE_SECURE_PACKET				// Enable the scrambled packet
 
 // Designate the IDS detection signatures
 #define	CEDAR_SIGNATURE_STR			"SE-VPN4-PROTOCOL"
@@ -1111,7 +1111,10 @@ typedef struct CEDAR
 #include <Cedar/IPsec_IPC.h>
 #include <Cedar/IPsec_IkePacket.h>
 #include <Cedar/IPsec_IKE.h>
+#ifdef	OS_WIN32
 #include <Cedar/IPsec_Win7.h>
+#endif	OS_WIN32
+
 #include <Cedar/IPsec_EtherIP.h>
 // SSTP
 #include <Cedar/Interop_SSTP.h>

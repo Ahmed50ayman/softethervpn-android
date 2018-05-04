@@ -391,8 +391,9 @@ int iconv_close (iconv_t __cd);
 #include <Mayaqua/OS.h>
 
 // Code for Microsoft Windows
+#ifdef	OS_WIN32
 #include <Mayaqua/Microsoft.h>
-
+#endif	OS_WIN32
 
 // Global variables
 extern bool g_memcheck;
